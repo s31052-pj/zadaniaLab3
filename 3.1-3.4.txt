@@ -1,0 +1,98 @@
+3.1
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    float a, b;
+    cout << "Podaj liczby: ";
+    cin >> a;
+    cout << "Podaj liczby: ";
+    cin >> b;
+    cout << endl;
+    
+    float suma = a + b;
+    float roznica = a - b;
+    float iloczyn = a * b;
+    float iloraz = a / b;
+    
+    cout << setprecision (2) << fixed << "Suma: " << suma << endl;
+    cout << setprecision (2) << fixed << "Roznica: " << roznica << endl;
+    cout << setprecision (2) << fixed << "Iloczyn: " << iloczyn << endl;
+    cout << setprecision (2) << fixed << "Iloraz: " << iloraz;
+    
+    return 0;
+}
+
+3.2
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string x;
+    while(x != "t"){
+        cout << "Podaj literę: ";
+        cin >> x;
+        cout << x << endl;
+    }
+    return 0;
+}
+
+3.3
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    cout << "ax^2 + bx - c = 0\n";
+    cout << "Podaj wartość dla a, b, i c: ";
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << a << "x^2 + " << b << "x - " << c << " = 0\n";
+    float delta = (b*b) - (4 * a * c);
+    cout << "Delta = " << delta << "\n";
+    if (delta > 0){
+        float x1 = -b-sqrt(delta);
+        float xx1 = 2*a;
+        float xxx1 = x1/xx1;
+        float x2 = -b+sqrt(delta);
+        float xx2 = 2*a;
+        float xxx2 = x2/xx2;
+        cout << "x1 = " << xxx1 << "\n";
+        cout << "x2 = " << xxx2;
+    }
+    else if (delta == 0){
+        float x0 = -b/2*a;
+        cout << "x0 = " << x0;
+    }
+    else{
+        cout << "Delta jest ujemna, brak miejsca zerowego";
+    }
+}
+
+3.4
+#include <iostream>
+using namespace std;
+
+int main() {
+    int wiersz;
+
+    cout << "Podaj liczbe wierszy: ";
+    cin >> wiersz;
+
+    for (int i = 0; i < wiersz; i++) {
+        int x = 1;
+        for (int j = 1; j <= wiersz - i; j++){
+            cout << " ";
+        }
+        for (int k = 0; k <= i; k++) {
+            cout << x << " ";
+            x = x * (i - k) / (k + 1);
+        }
+        cout << endl;
+    }
+    return 0;
+}
